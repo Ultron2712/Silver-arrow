@@ -297,12 +297,57 @@
 <nav>
   <div class="row">
     <div class="brand">
-      <svg class="mercedes-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;">
-  <circle cx="50" cy="50" r="48" fill="none" stroke="#eef1f4" stroke-width="2"/>
-  <circle cx="50" cy="50" r="42" fill="none" stroke="#eef1f4" stroke-width="1.5"/>
-  <line x1="50" y1="10" x2="50" y2="90" stroke="#eef1f4" stroke-width="2"/>
-  <line x1="20" y1="50" x2="80" y2="50" stroke="#eef1f4" stroke-width="2"/>
-  <line x1="28" y1="28" x2="72" y2="72" stroke="#eef1f4" stroke-width="2"/>
+     <svg xmlns="http://w3.org" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Optional ring gradient to give it the classic 3D metallic look -->
+    <radialGradient id="metallic-ring" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#e1e4e6" />
+      <stop offset="70%" stop-color="#8b939c" />
+      <stop offset="100%" stop-color="#3b4046" />
+    </radialGradient>
+    
+    <!-- Star gradient for 3D depth -->
+    <linearGradient id="star-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#9aa0a6" />
+    </linearGradient>
+    <linearGradient id="star-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#b0b7bd" />
+    </linearGradient>
+    <linearGradient id="star-grad-3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#737a82" />
+      <stop offset="100%" stop-color="#e1e4e6" />
+    </linearGradient>
+  </defs>
+
+  <g id="mercedes-logo">
+    <!-- Outer Ring -->
+    <circle cx="250" cy="250" r="230" fill="url(#metallic-ring)" />
+    <circle cx="250" cy="250" r="205" fill="#ffffff" />
+
+    <!-- Three-Pointed Star -->
+    <g id="star">
+      <!-- Top Blade (Left Side) -->
+      <polygon points="250,250 206,127 250,157" fill="url(#star-grad-1)" />
+      <!-- Top Blade (Right Side) -->
+      <polygon points="250,250 294,127 250,157" fill="url(#star-grad-2)" />
+      
+      <!-- Bottom Right Blade (Top Side) -->
+      <polygon points="250,250 365,296 330,296" fill="url(#star-grad-2)" />
+      <!-- Bottom Right Blade (Bottom Side) -->
+      <polygon points="250,250 365,296 302,277" fill="url(#star-grad-3)" />
+
+      <!-- Bottom Left Blade (Top Side) -->
+      <polygon points="250,250 135,296 170,296" fill="url(#star-grad-3)" />
+      <!-- Bottom Left Blade (Bottom Side) -->
+      <polygon points="250,250 135,296 198,277" fill="url(#star-grad-1)" />
+      
+      <!-- Center Core Cap -->
+      <circle cx="250" cy="250" r="32" fill="url(#metallic-ring)" />
+    </g>
+  </g>
 </svg>
       <div>
         <div class="font-display" style="font-size:13px;color:#fff;">Mercedes AMG</div>
